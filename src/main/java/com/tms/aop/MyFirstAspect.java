@@ -1,7 +1,11 @@
 package com.tms.aop;
 
+import org.aspectj.lang.JoinPoint;
+import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.*;
 import org.springframework.stereotype.Component;
+
+import java.time.LocalTime;
 
 @Aspect //говорит о том что класс будет аспектом
 @Component
@@ -19,7 +23,7 @@ public class MyFirstAspect {
         System.out.println("Pointcut work!");
     }
 
-/*         @Before(value = "@annotation(com.tms.annotations.AspectAnnotation)" ) //перед вполнением метода
+         @Before(value = "@annotation(com.tms.annotations.AspectAnnotation)" ) //перед вполнением метода
         public void startTimeEvent(JoinPoint joinPoint) { //joinPoint - точка где работает аспект
             System.out.println(LocalTime.now() + " " + joinPoint.getSignature().getName() + " method start working ...");
         }
@@ -48,7 +52,7 @@ public class MyFirstAspect {
         System.out.println("Print return value from aspect: " + retValue);
     }
 
-    @Around(value = "@annotation(com.tms.annotations.AspectAnnotation)")
+/*    @Around(value = "@annotation(com.tms.annotations.AspectAnnotation)")
     public Object aroundExampleMethod(ProceedingJoinPoint joinPoint) throws Throwable {
         LocalTime startTime = LocalTime.now();
         Object returnValue = joinPoint.proceed();
