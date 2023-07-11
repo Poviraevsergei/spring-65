@@ -52,7 +52,7 @@ public class MyFirstAspect {
         System.out.println("Print return value from aspect: " + retValue);
     }
 
-    @Around(value = "@annotation(com.tms.annotations.AspectAnnotation)")
+/*    @Around(value = "@annotation(com.tms.annotations.AspectAnnotation)")
     public Object aroundExampleMethod(ProceedingJoinPoint joinPoint) throws Throwable {
         LocalTime startTime = LocalTime.now();
         Object returnValue = joinPoint.proceed();
