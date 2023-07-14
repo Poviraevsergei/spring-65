@@ -59,5 +59,5 @@ public class MyFirstAspect {
         LocalTime endTime = LocalTime.now();
         System.out.println("Method worked " + (endTime.getNano() - startTime.getNano()));
         return returnValue;
-    }
+    }*/
 }
