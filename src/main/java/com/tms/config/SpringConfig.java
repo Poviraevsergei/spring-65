@@ -10,13 +10,13 @@ import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 import org.springframework.web.servlet.view.InternalResourceViewResolver;
 
-@EnableWebMvc
+@EnableWebMvc //для активации интерсепторов в нашем случае
 @EnableAspectJAutoProxy //активирует АОП
 @ComponentScan("com.tms") //с какой папки начинать вычитывать все классы
 @Configuration //которые будут использоваться для настройки, где мы будуем создавать свои бины
 public class SpringConfig implements WebMvcConfigurer {
 
-    private MyInterceptor myInterceptor;
+    private final MyInterceptor myInterceptor;
 
     public SpringConfig(MyInterceptor myInterceptor) {
         this.myInterceptor = myInterceptor;
